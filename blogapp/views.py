@@ -6,7 +6,7 @@ from .forms import BlogForm, BlogModelForm, CommentForm
 def home(request):
     # 블로그 글들을 모조리 띄우는 코드
     # posts = Blog.objects.all()
-    posts = Blog.objects.fileter().order_by('-date')
+    posts = Blog.objects.filter().order_by('-date')
     return render(request, 'index.html', {'post':posts})
 
 # 블로그 글 작성 html을 보여주는 함수
